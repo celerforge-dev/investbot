@@ -63,7 +63,7 @@ export function AppSidebar() {
                     </CollapsibleTrigger>
                   </div>
                   <Link
-                    href="/"
+                    href="/chat"
                     className="flex flex-1 items-center justify-between"
                     title="New chat"
                   >

@@ -6,6 +6,7 @@ import {
   CirclePlus,
   Loader,
   LucideIcon,
+  Pencil,
   RefreshCw,
   Sparkles,
   StopCircle,
@@ -21,4 +22,5 @@ export const Icons = {
   stopCircle: StopCircle,
   refreshCw: RefreshCw,
   circlePlus: CirclePlus,
+  pencil: Pencil,
 } satisfies Record<string, LucideIcon>;
