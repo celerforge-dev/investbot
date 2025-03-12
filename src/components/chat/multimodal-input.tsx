@@ -268,7 +268,7 @@ function PureStopButton({
   return (
     <Button
       data-testid="stop-button"
-      className="h-fit rounded-full border p-1.5 dark:border-zinc-600"
+      className="flex h-8 w-8 items-center justify-center rounded-full border p-0 dark:border-zinc-600"
       onClick={(event) => {
         event.preventDefault();
         stop();
@@ -294,7 +294,7 @@ function PureSendButton({
   return (
     <Button
       data-testid="send-button"
-      className="h-fit rounded-full border p-1.5 dark:border-zinc-600"
+      className="flex h-8 w-8 items-center justify-center rounded-full border p-0 dark:border-zinc-600"
       onClick={(event) => {
         event.preventDefault();
         submitForm();
