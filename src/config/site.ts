@@ -1,10 +1,10 @@
 export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
-  name: "AlphaInversor",
-  url: "alphainversor.com",
-  title: "AlphaInversor",
-  description: "AlphaInversor",
+  name: "Investbot",
+  url: "investbot.app",
+  title: "Investbot",
+  description: "Investbot",
   keywords: [],
   twitter: "https://twitter.com/chaoying972",
-  domain: "https://alphainversor.com",
+  domain: "https://investbot.app",
 };
