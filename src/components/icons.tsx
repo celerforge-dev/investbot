@@ -6,6 +6,7 @@ import {
   Loader,
   LucideIcon,
   MessageCircleMore,
+  Pencil,
   Puzzle,
   RefreshCw,
   Sparkles,
@@ -27,4 +28,5 @@ export const Icons = {
   messageCircleMore: MessageCircleMore,
   trendingUp: TrendingUp,
   puzzle: Puzzle,
+  pencil: Pencil,
 } satisfies Record<string, LucideIcon>;
