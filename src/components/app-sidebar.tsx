@@ -13,6 +13,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
@@ -29,6 +30,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -45,32 +47,54 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader className="px-4 pt-4">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
+          <SidebarGroupLabel>Personal</SidebarGroupLabel>
           <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link href="/" className="w-full">
+                  <Icons.bot />
+                  <span>Bots</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link href="/portfolio" className="w-full">
+                  <Icons.trendingUp />
+                  <span>Portfolios</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
             <Collapsible className="group/collapsible" defaultOpen={false}>
               <SidebarMenuItem>
-                <SidebarMenuButton
-                  isActive={pathname === "/chat"}
-                  className="group/chat flex"
-                >
-                  <div className="flex h-4 w-4 items-center justify-center">
-                    <Icons.botMessageSquare className="block transition-opacity duration-200 group-hover/chat:hidden" />
-                    <CollapsibleTrigger asChild>
-                      <Icons.chevronRight className="-ml-1 hidden h-5 w-5 rounded transition-transform duration-200 group-hover/chat:block group-data-[state=open]/collapsible:rotate-90 hover:bg-neutral-200" />
-                    </CollapsibleTrigger>
-                  </div>
-                  <Link
-                    href="/chat"
-                    className="flex flex-1 items-center justify-between"
-                    title="New chat"
+                <CollapsibleTrigger asChild>
+                  <SidebarMenuButton
+                    isActive={pathname === "/chat"}
+                    className="group/chat flex"
                   >
-                    Chat
-                    <Icons.circlePlus className="hidden h-4 w-4 group-hover/chat:block" />
-                  </Link>
-                </SidebarMenuButton>
+                    <div className="flex h-6 w-4 items-center justify-center">
+                      <Icons.messageCircleMore className="block transition-opacity duration-200 group-hover/chat:hidden" />
+                      <Icons.chevronRight className="hidden rounded transition-transform duration-200 group-hover/chat:block group-data-[state=open]/collapsible:rotate-90" />
+                    </div>
+                    <div className="flex flex-1 items-center justify-between">
+                      Chat
+                    </div>
+                  </SidebarMenuButton>
+                </CollapsibleTrigger>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  title="New chat"
+                  className="absolute top-1 right-1 h-6 w-6 hover:bg-neutral-200"
+                >
+                  <Icons.squarePen scale={0.8} />
+                </Button>
                 <CollapsibleContent>
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
@@ -112,7 +136,19 @@ export function AppSidebar() {
             </Collapsible>
           </SidebarMenu>
         </SidebarGroup>
-        <SidebarGroup />
+        <SidebarGroup>
+          <SidebarGroupLabel>Explore</SidebarGroupLabel>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton asChild>
+                <Link href="/strategy" className="w-full">
+                  <Icons.puzzle />
+                  <span>Strategies</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter />
     </Sidebar>
